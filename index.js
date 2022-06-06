@@ -45,6 +45,7 @@ app.post("/", express.json(), (req, res) => {
             var price;
             items = snapshot.val().items;
             var text = "";
+            var discount = "";
             price = snapshot.val().total;
 
             for (i = 0; i < items.length; i++) {
@@ -60,10 +61,15 @@ app.post("/", express.json(), (req, res) => {
                   " <br/>");
             }
 
+            if (items.length > 2) {
+              discount =
+                "A 30% discount was applied because you have purchased more than 2 rooms";
+            }
             const output = `
-            <h2>You paid a total of ${price}$ </h2>
+            <h2>You paid a total of ${price}$ for this order.</h2>
             <h2>Here is the list with the rooms you booked: </h2>
             <h3>${text}</h3>
+            <h2>  ${discount} </h2>
             <h2>Thank you for choosing Ambiance!</h2>
           `;
 
