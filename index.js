@@ -27,9 +27,7 @@ app.post("/", express.json(), (req, res) => {
   function UserGetEmailHandler(agent) {
     const { mail } = result.parameters;
     agent.add(`I sent you at email at the address ${mail} you provided!`);
-
     var items;
-    const userName = "";
 
     admin
       .auth()
@@ -56,6 +54,8 @@ app.post("/", express.json(), (req, res) => {
                   items[i].number +
                   " - " +
                   items[i].reservationDay +
+                  " - " +
+                  items[i].price +
                   " <br/>");
             }
 
@@ -63,7 +63,7 @@ app.post("/", express.json(), (req, res) => {
             <h2>You paid a total of ${price}$ </h2>
             <h2>Here is the list with the rooms you booked: </h2>
             <h3>${text}</h3>
-            <h3>Thank you ${userName}</h3>
+            <h2>Thank you for choosing Ambiance!</h2>
           `;
 
             try {
