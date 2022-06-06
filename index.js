@@ -56,6 +56,7 @@ app.post("/", express.json(), (req, res) => {
                   items[i].reservationDay +
                   " - " +
                   items[i].price +
+                  "$" +
                   " <br/>");
             }
 
