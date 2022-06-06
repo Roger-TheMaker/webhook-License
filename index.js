@@ -60,7 +60,7 @@ app.post("/", express.json(), (req, res) => {
             }
 
             const output = `
-            <h2>You paid a total of ${{ price }}$ </h2>
+            <h2>You paid a total of ${price}$ </h2>
             <h2>Here is the list with the rooms you booked: </h2>
             <h3>${text}</h3>
             <h3>Thank you ${userName}</h3>
