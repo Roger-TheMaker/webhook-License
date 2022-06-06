@@ -57,13 +57,13 @@ app.post("/", express.json(), (req, res) => {
                   items[i].reservationDay +
                   " - " +
                   items[i].price +
-                  "$" +
+                  "$;" +
                   " <br/>");
             }
 
             if (items.length > 2) {
               discount =
-                "A 30% discount was applied because you have purchased more than 2 rooms";
+                "A discount of 30% was applied because you have purchased more than 2 rooms.";
             }
             const output = `
             <h2>You paid a total of ${price}$ for this order.</h2>
